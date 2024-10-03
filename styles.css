@@ -3,9 +3,18 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  
+
+  .poppins-settings {
+    font-family: "Poppins", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
   
   body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
     scroll-behavior: auto; /* Disable smooth scrolling for jumping between sections */
@@ -18,13 +27,14 @@
     position: fixed;
     width: 100%;
     padding: 15px 50px;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(3, 3, 3, 0.122);
     z-index: 1000;
   }
   
   .menu-bar .logo {
     font-size: 24px;
     font-weight: bold;
+    color: #fff;
   }
   
   .menu-bar nav ul {
@@ -38,43 +48,47 @@
   
   .menu-bar nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: #ffffff;
     font-size: 16px;
     transition: 0.3s ease;
     cursor: pointer;
+    font-weight: 600;
   }
   
   .menu-bar nav ul li a:hover {
-    color: #000;
+    color: #ffffff;
     font-size: 18px;
   }
   
   .banner {
     height: 100vh;
-    background: url('banner-image.jpg') center/cover no-repeat;
+    background: url('./images/IMG_1508.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     position: relative;
     color: white;
-    animation: zoomIn 2s;
+    animation: zoomOut 2s ease-out;
   }
   
   .banner-content h1 {
-    color: #120f0f;
-    font-size: 48px;
+    color: #ffffff;
+    font-size: 52px;
     margin-bottom: 20px;
     z-index: 1;
   }
   
   .cta-button {
-    padding: 15px 30px;
-    background-color: #ff6600;
-    border: none;
-    border-radius: 25px;
-    color: #fff;
-    font-size: 16px;
+    padding: 15px 40px;
+    background-color: #ffffff;
+    border-radius: 40px;
+    border:none; 
+    /* color: #fff; */
+    font-family: "Poppins";
+    font-size: 18px;
+    font-weight: 600;
+    color: #651414da;
     cursor: pointer;
     transition: 0.3s;
     z-index: 1;
@@ -88,17 +102,16 @@
     background-color: #ff4500;
   }
   
-  @keyframes zoomIn {
-    0% {
-      transform: scale(0.8);
-      opacity: 0;
+  /* Define the zoomOut keyframe animation */
+  @keyframes zoomOut {
+    from {
+        transform: scale(1.2); /* Start slightly zoomed in */
     }
-    100% {
-      transform: scale(1);
-      opacity: 1;
+    to {
+        transform: scale(1); /* Zoom out to normal size */
     }
   }
-  
+
   .about-us {
     height: 100vh; /* Make About Us section full screen */
     background-color: #f0f0f0; /* Background color */
@@ -122,13 +135,14 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    background-color: #d1d0cf;
   }
   
-  .upcoming-events {
-    height: 100vh; /* Make Upcoming Events section full screen */
-    background-color: #e9e9e9; /* Background color */
+  /* .upcoming-events {
+    height: 100vh; 
+    background-color: #e9e9e9; 
     padding: 50px 20px;
-  }
+  } */
   
   .section-header {
     text-align: center;
@@ -136,7 +150,7 @@
     margin-bottom: 20px;
   }
   
-  .event-card {
+  /* .event-card {
     display: flex;
     border-radius: 20px;
     overflow: hidden;
@@ -144,11 +158,11 @@
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+  } */
   
   .event-image {
     width: 50%;
-    background: url('event-image.jpg') center/cover no-repeat;
+    background: url('./images/8\ Must\ Visit\ Places\ In\ Goa\ During\ Monsoons.jpeg') center/cover no-repeat;
     border-radius: 20px 0 0 20px;
   }
   
@@ -183,12 +197,37 @@
     color: #fff;
     padding: 30px;
     text-align: center;
+    /* margin-top: 30px; */
   }
   
   .social-icons img {
     width: 25px;
     margin: 0 10px;
   }
+
+  /* Upcoming Events Section */
+  .upcoming-events {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures section takes full viewport height */
+    padding: 40px 0; /* Equal top and bottom padding for spacing */
+    box-sizing: border-box; /* Includes padding in the element's total height */
+  }
+
+  /* Adjust the event card styling */
+  .event-card {
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%; /* Makes sure the card does not take up the full width */
+  }
+
   
   @media (max-width: 768px) {
     .menu-bar {
@@ -203,17 +242,30 @@
       font-size: 28px;
     }
   
+    .about-us {
+      height: auto;
+    }
     .about-us p {
       font-size: 16px;
-      width: 80%;
+      width: 60%;
+      overflow-wrap: break-word;
     }
-  
+
+   
+
     .event-card {
-      flex-direction: column;
+      flex-direction: column; /* Stack image and description vertically */
     }
-  
+
     .event-image, .event-description {
-      width: 100%;
+        width: 100%;
     }
+
+    .event-image {
+        height: 200px; /* Ensure the image has a fixed height */
+        border-radius: 20px 20px 0 0;
+    }
+    
+
   }
   
