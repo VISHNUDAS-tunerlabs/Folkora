@@ -3,6 +3,6 @@ function scrollToSection(sectionId) {
   }
   
   function downloadPDF() {
-    window.location.href = 'path/to/your/file.pdf';
+    window.location.href = 'https://drive.google.com/file/d/1ZmsJUmn2VHLnWZeabxYvT8xBusmmPVI4//uc?export=download';
   }
   

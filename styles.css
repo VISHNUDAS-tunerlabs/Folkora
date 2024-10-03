@@ -135,7 +135,6 @@
     width: 60%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #d1d0cf;
   }
   
   /* .upcoming-events {
@@ -162,23 +161,25 @@
   
   .event-image {
     width: 50%;
-    background: url('./images/8\ Must\ Visit\ Places\ In\ Goa\ During\ Monsoons.jpeg') center/cover no-repeat;
+    background: url('./images/goa.jpg') center/cover no-repeat;
     border-radius: 20px 0 0 20px;
   }
   
   .event-description {
     padding: 20px;
     width: 50%;
+    color: #555;
   }
   
-  .event-description h3 {
+  .event-description h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #07a914;
   }
   
   .details-button {
     padding: 10px 20px;
-    background-color: #ff6600;
+    background-color: #07a914;
     border: none;
     border-radius: 25px;
     color: #fff;
@@ -186,6 +187,8 @@
     transition: 0.3s;
     display: block;
     margin: 20px auto 0;
+    font-family: "Poppins";
+    font-weight: 500;
   }
   
   .details-button:hover {
